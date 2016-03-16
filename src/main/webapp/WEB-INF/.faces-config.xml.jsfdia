@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="enclos::#enclos.xhtml" NAME="output"
+    PATH="/enclos.xhtml" TARGET="rules:#enclos.xhtml" TITLE="enclos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#index.xhtml:1" NAME="item1"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="animaux::#animaux.xhtml" NAME="output"
+    PATH="/animaux.xhtml" TARGET="rules:#animaux.xhtml" TITLE="animaux" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#index.xhtml:2" NAME="item2"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="visites::#visites.xhtml" NAME="output"
+    PATH="/visites.xhtml" TARGET="rules:#visites.xhtml" TITLE="visites" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#animaux.xhtml" PATH="/animaux.xhtml"
+  SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#visites.xhtml" PATH="/visites.xhtml"
+  SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#enclos.xhtml" PATH="/enclos.xhtml"
+  SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

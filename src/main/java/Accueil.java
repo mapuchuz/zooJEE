@@ -10,13 +10,13 @@ public class Accueil {
 //	static private List<Enclos>enclos= 	new ArrayList<>();
 
 	public String enclos() {
-		return null;
+		return "enclos";
 	}
 	public String animaux() {
-		return null;
+		return "animaux";
 	}
 	public String visites() {
-		return null;
+		return "visites";
 	}
 	
 	

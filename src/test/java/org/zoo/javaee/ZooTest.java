@@ -1,5 +1,7 @@
 package org.zoo.javaee;
 
+import java.util.stream.Collectors;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,4 +50,10 @@ public class ZooTest {
 		Assert.assertEquals(25, zoo.getVisites().size());
 	}
 
+	
+	@Test
+	public void everyAnimalHasARoom() {
+		Assert.assertEquals( zoo.getAnimaux().size(), zoo.getAffectations().size());
+	}
+	
 }

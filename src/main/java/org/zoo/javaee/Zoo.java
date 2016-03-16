@@ -4,12 +4,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Zoo {
 
 	private static List<Enclos>enclos= new ArrayList<>();
 	private static List<Animal>animaux= new ArrayList<>();
 	private static List<Visite>visites= new ArrayList<>();
+	private static List<Affectation>affectations= new ArrayList<>();
 	
 	private static Zoo zoo;
 	public static Zoo getZoo() {
@@ -25,6 +27,7 @@ public class Zoo {
 	private void load() {
 		loadEnclos();
 		loadAnimal();
+		loadAffectation();
 		try {
 			loadVisite();
 		} catch (ParseException e) {
@@ -33,6 +36,20 @@ public class Zoo {
 		}
 	}
 
+
+	private void loadAffectation() {
+		affectations.add( new Affectation( enclos.get(3),  animaux.get(0)) );
+		affectations.add( new Affectation( enclos.get(0),  animaux.get(1)) );
+		affectations.add( new Affectation( enclos.get(1),  animaux.get(2)) );
+		affectations.add( new Affectation( enclos.get(1),  animaux.get(6)) );
+		affectations.add( new Affectation( enclos.get(2),  animaux.get(7)) );
+		affectations.add( new Affectation( enclos.get(2),  animaux.get(3)) );
+		affectations.add( new Affectation( enclos.get(4),  animaux.get(4)) );
+		affectations.add( new Affectation( enclos.get(4),  animaux.get(9)) );
+		affectations.add( new Affectation( enclos.get(4),  animaux.get(10)) );
+		affectations.add( new Affectation( enclos.get(3),  animaux.get(5)) );
+		affectations.add( new Affectation( enclos.get(3),  animaux.get(8)) );
+	}
 
 	private void loadVisite() throws ParseException {
 		SimpleDateFormat sDF= new SimpleDateFormat("dd/MM/yyyy");
@@ -78,12 +95,21 @@ public class Zoo {
 		animaux.add( new Animal("djili", "Kangourou"));
 	}
 
+
 	private void loadEnclos() {
 		enclos.add( new Enclos("enclos1"));		
 		enclos.add( new Enclos("enclos2"));		
 		enclos.add( new Enclos("enclos3"));		
 		enclos.add( new Enclos("enclos4"));		
 		enclos.add( new Enclos("enclos5"));		
+	}
+
+	public static List<Affectation> getAffectations() {
+		return affectations;
+	}
+
+	public static void setAffectations(List<Affectation> affectations) {
+		Zoo.affectations = affectations;
 	}
 
 	public static List<Enclos> getEnclos() {

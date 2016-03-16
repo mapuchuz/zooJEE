@@ -7,7 +7,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 		xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="">
+<ui:composition template="WEB-INF/Template/basic.xhtml">
 	<ui:define name="header">
 	ZooJEE
 	</ui:define>
@@ -20,9 +20,9 @@
 				<h:outputText value="Animaux" />
 				<h:outputText value="Visites" />
 
-				<h:commandButton action="#{index.enclos}" value="Gestion des Enclos" />
-				<h:commandButton action="#{index.animaux}" value="Gestion des Animaux" />
-				<h:commandButton action="#{index.visites}" value="Gestion des Visites" />
+				<h:commandButton action="#{accueil.enclos}" value="Gestion des Enclos" />
+				<h:commandButton action="#{accueil.animaux}" value="Gestion des Animaux" />
+				<h:commandButton action="#{accueil.visites}" value="Gestion des Visites" />
 			</p:panelGrid>
 		</h:form>
 	</ui:define>

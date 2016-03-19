@@ -1,8 +1,5 @@
 package org.zoo.javaee;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
@@ -16,9 +13,11 @@ public class Accueil {
 	public String animaux() {
 		return "animaux";
 	}
+	public String sandbox() {
+		return "sandbox";
+	}
 	public String visites() {
 		return "visites";
 	}
-	
 	
 }

@@ -17,6 +17,11 @@
    <PROCESS-ITEM-OUTPUT ID="visites::#visites.xhtml" NAME="output"
     PATH="/visites.xhtml" TARGET="rules:#visites.xhtml" TITLE="visites" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#index.xhtml:3" NAME="item3"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sandbox::#sandbox.xhtml" NAME="output"
+    PATH="/sandbox.xhtml" TARGET="rules:#sandbox.xhtml" TITLE="sandbox" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#animaux.xhtml" PATH="/animaux.xhtml"
   SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
@@ -24,4 +29,6 @@
   SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#enclos.xhtml" PATH="/enclos.xhtml"
   SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#sandbox.xhtml" PATH="/sandbox.xhtml"
+  SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

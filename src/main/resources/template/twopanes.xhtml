@@ -4,12 +4,12 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:h="http://java.sun.com/jsf/html">
-	
+
 <h:head>
-<title><ui:insert name="title">ZooJEE</ui:insert></title>
+	<title><ui:insert name="title">ZooJEE</ui:insert></title>
 </h:head>
 
-<body>
+<h:body>
 	<ui:debug hotkey="x"
 		rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}" />
 
@@ -24,10 +24,21 @@
 
 	<div id="content">
 		<ui:insert name="content">
+		<ui:include src="/template/content.xhtml" />
 	    	Content area.  See comments below this line in the source.
     		<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
 			<div>
-				<ui:include src="content.xhtml"/>
+				<p:layout style="min-width:400px;min-height:800px;">
+					<p:layoutUnit id="leftpane" position="west" resizable="true"
+						size="100" minSize="40">
+        			West
+        			<br />
+					</p:layoutUnit>
+
+					<p:layoutUnit id="rightpane" position="center">
+			        Center
+    				</p:layoutUnit>
+				</p:layout>
 			</div>
 		</ui:insert>
 	</div>
@@ -40,6 +51,6 @@
 		</ui:insert>
 	</div>
 
-</body>
+</h:body>
 
 </html>

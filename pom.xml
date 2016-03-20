@@ -5,7 +5,7 @@
 	Licensed under the Apache License, Version 2.0 (the "License"); you may not 
 	use this file except in compliance with the License. You may obtain a copy 
 	of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
-	by applicable law or agreed to in writing, software distributed under the 
+	by applicable law or agreed to in writing, software distributed under th
 	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
 	OF ANY KIND, either express or implied. See the License for the specific 
 	language governing permissions and limitations under the License. -->
@@ -81,6 +81,15 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
+
+
 	<dependencies>
 
 		<!-- We use PrimeFaces -->
@@ -90,6 +99,11 @@
 			<version>5.3</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>afterdark</artifactId>
+			<version>1.0.8</version>
+		</dependency>
 		<!-- First declare the APIs we depend on and need for compilation. All 
 			of them are provided by JBoss WildFly -->
 

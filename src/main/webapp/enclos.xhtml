@@ -7,6 +7,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
+<h:body>
 <ui:composition template="WEB-INF/template/twopanes.xhtml">
 	<ui:define name="icigauche">
 	<h:form>  
@@ -14,19 +15,21 @@
  
     <h3 style="margin-top:0">Plain Menu</h3>
     <p:menu>
-        <p:submenu label="Ajax">
-            <p:menuitem value="Save" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk" />
+        <p:submenu label="Les enclos">
+            <p:menuitem value="list" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk" />
             <p:menuitem value="Update" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
         </p:submenu>
-        <p:submenu label="Non-Ajax">
-            <p:menuitem value="Delete" actionListener="#{menuView.delete}" update="messages" ajax="false" icon="ui-icon-close"/>
+        <p:submenu label="Détails d'un enclos">
+            <p:menuitem value="Contenu" actionListener="#{menuView.delete}" update="messages" ajax="false" icon="ui-icon-close"/>
         </p:submenu>
      </p:menu>
  </h:form>
 
-	
+<br />
+
 	</ui:define>
 	<ui:define name="icicentre">
+<h:form>
 	   <p:graphicImage id="pic21" value="resources/images/enclos1.jpg" width="200" height="200"/>
 		<p:draggable for="pic21" />
   			<br />
@@ -37,7 +40,43 @@
 			<p:draggable for="pic23" />
   			<br />      
 			Apres image
+			<br />
+
+    <p:dataGrid var="phrasee" value="#{parle.paroles}" columns="3" layout="grid" rows="3">
+ 
+        <f:facet name="header">
+            Paroles
+        </f:facet>
+ 
+        <p:panel header="head pane" style="text-align:center">
+            <h:panelGrid columns="1" style="width:100%">
+                <p:graphicImage name="resources/images/enclos1.jpg"/> 
+ 
+                <h:outputText value="#{phrasee}" />
+ 
+            </h:panelGrid>
+        </p:panel>
+ 
+    </p:dataGrid>
+        <p:dataGrid var="enclos" value="#{parle.enclos}" columns="3" layout="grid" rows="6">
+         <f:facet name="header">
+            Les Enclos du Zoo
+        </f:facet>
+ 
+        <p:panel header="#{enclos.nom}" style="text-align:center">
+            <h:panelGrid columns="1" style="width:100%">
+	   <p:graphicImage id="picZZ" value="resources/images/#{enclos.nom}.jpg" width="200" height="200"/>
+                <h:outputText value="#{enclos.nom}" />
+ 
+            </h:panelGrid>
+        </p:panel>
+ 
+    </p:dataGrid>
+    
+</h:form>
+			
 	</ui:define>
 	
 </ui:composition>
+</h:body>
 </html>

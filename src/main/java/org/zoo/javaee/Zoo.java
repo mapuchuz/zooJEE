@@ -1,14 +1,24 @@
 package org.zoo.javaee;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class Zoo {
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 
+@ManagedBean( name = "zoo" )
+@ApplicationScoped
+public class Zoo implements Serializable  {
+
+    private static final long serialVersionUID = 1L;
+    
+	@ManagedProperty( value = "#{enclos}")
 	private static List<Enclos>enclos= new ArrayList<>();
+	
 	private static List<Animal>animaux= new ArrayList<>();
 	private static List<Visite>visites= new ArrayList<>();
 	private static List<Affectation>affectations= new ArrayList<>();
@@ -20,7 +30,7 @@ public class Zoo {
 		return zoo;
 	}
 	
-	public Zoo() {
+	private Zoo() {
 		load();
 	}
 	
@@ -112,9 +122,7 @@ public class Zoo {
 		Zoo.affectations = affectations;
 	}
 
-	public static List<Enclos> getEnclos() {
-		return enclos;
-	}
+
 
 	public static List<Animal> getAnimaux() {
 		return animaux;
@@ -123,5 +131,6 @@ public class Zoo {
 	public static List<Visite> getVisites() {
 		return visites;
 	}
-	
+
+
 }

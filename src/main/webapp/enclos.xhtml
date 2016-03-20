@@ -7,17 +7,10 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="WEB-INF/template/basic.xhtml">
-	<ui:define name="header">
-	    <h2>Gestion des Enclos</h2>
-	</ui:define>
-	<ui:define name="content">
-	    Add your content here or delete to use the default
-	    <p:layout style="min-width:400px;min-height:800px;">
-	    	<p:layoutUnit position="west" resizable="true" size="100" minSize="40">
-	        West
-    	    <p:graphicImage id="pic1" value="resources/images/enclos1.jpg" width="200" height="200"/>
-			<p:draggable for="pic1" />
+<ui:composition template="WEB-INF/template/twopanes.xhtml">
+	<ui:define name="icigauche">
+	   <p:graphicImage id="pic1" value="resources/images/enclos1.jpg" width="200" height="200"/>
+		<p:draggable for="pic1" />
   			<br />
         	<p:graphicImage id="pic2" value="resources/images/enclos2.jpg" width="200" height="200"/>  		
 			<p:draggable for="pic2" />
@@ -26,16 +19,19 @@
 			<p:draggable for="pic3" />
   			<br />      
 			Apres image
-		    </p:layoutUnit>
-
-			<p:layoutUnit position="center">
-	    	Les A n i m a u x
-	        </p:layoutUnit>
-		</p:layout>
-	    
 	</ui:define>
-	<ui:define name="footer">
-	    Add your footer here or delete to use the default
+	<ui:define name="icicentre">
+	   <p:graphicImage id="pic21" value="resources/images/enclos1.jpg" width="200" height="200"/>
+		<p:draggable for="pic21" />
+  			<br />
+        	<p:graphicImage id="pic22" value="resources/images/enclos2.jpg" width="200" height="200"/>  		
+			<p:draggable for="pic22" />
+  			<br />      
+        	<p:graphicImage id="pic23" value="resources/images/enclos3.jpg" width="200" height="200"/>  		
+			<p:draggable for="pic23" />
+  			<br />      
+			Apres image
 	</ui:define>
+	
 </ui:composition>
 </html>

@@ -9,16 +9,22 @@
 
 <ui:composition template="WEB-INF/template/twopanes.xhtml">
 	<ui:define name="icigauche">
-	   <p:graphicImage id="pic1" value="resources/images/enclos1.jpg" width="200" height="200"/>
-		<p:draggable for="pic1" />
-  			<br />
-        	<p:graphicImage id="pic2" value="resources/images/enclos2.jpg" width="200" height="200"/>  		
-			<p:draggable for="pic2" />
-  			<br />      
-        	<p:graphicImage id="pic3" value="resources/images/enclos3.jpg" width="200" height="200"/>  		
-			<p:draggable for="pic3" />
-  			<br />      
-			Apres image
+	<h:form>  
+    <p:growl id="messages" showDetail="false"/>
+ 
+    <h3 style="margin-top:0">Plain Menu</h3>
+    <p:menu>
+        <p:submenu label="Ajax">
+            <p:menuitem value="Save" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk" />
+            <p:menuitem value="Update" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        </p:submenu>
+        <p:submenu label="Non-Ajax">
+            <p:menuitem value="Delete" actionListener="#{menuView.delete}" update="messages" ajax="false" icon="ui-icon-close"/>
+        </p:submenu>
+     </p:menu>
+ </h:form>
+
+	
 	</ui:define>
 	<ui:define name="icicentre">
 	   <p:graphicImage id="pic21" value="resources/images/enclos1.jpg" width="200" height="200"/>

@@ -132,5 +132,9 @@ public class Zoo implements Serializable  {
 		return visites;
 	}
 
+	public static List<Enclos> getEnclos() {
+		return enclos;
+	}
+
 
 }

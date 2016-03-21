@@ -35,7 +35,10 @@
 	<ui:define name="icicentre">
 		<h:form>
  
- 
+ <p:fragment autoUpdate="true">
+ 	<p:commandButton action="#{enclosBean.refresh}"
+					value="Tous les Enclos par service AJAX" />
+	
         <p:dataGrid var="enclos" value="#{enclosBean.enclos}" columns="3" layout="grid" rows="6">
          <f:facet name="header">
             Les Enclos du Zoo
@@ -50,7 +53,7 @@
         </p:panel>
  
     </p:dataGrid>
-    
+</p:fragment>    
 </h:form>
 			
 	</ui:define>

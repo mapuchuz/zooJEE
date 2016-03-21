@@ -23,42 +23,20 @@
             <p:menuitem value="Contenu" actionListener="#{menuView.delete}" update="messages" ajax="false" icon="ui-icon-close"/>
         </p:submenu>
      </p:menu>
+   
+		<h:commandButton action="#{enclosBean.refresh}"
+					value="Tous les Enclos par service" />
+	
  </h:form>
 
 <br />
 
 	</ui:define>
 	<ui:define name="icicentre">
-<h:form>
-	   <p:graphicImage id="pic21" value="/images/enclos1.jpg" width="200" height="200"/>
-		<p:draggable for="pic21" />
-  			<br />
-        	<p:graphicImage id="pic22" value="images/enclos2.jpg" width="200" height="200"/>  		
-			<p:draggable for="pic22" />
-  			<br />      
-        	<p:graphicImage id="pic23" value="images/enclos3.jpg" width="200" height="200"/>  		
-			<p:draggable for="pic23" />
-  			<br />      
-			Apres image
-			<br />
-
-    <p:dataGrid var="phrasee" value="#{parle.paroles}" columns="3" layout="grid" rows="3">
+		<h:form>
  
-        <f:facet name="header">
-            Paroles
-        </f:facet>
  
-        <p:panel header="head pane" style="text-align:center">
-            <h:panelGrid columns="1" style="width:100%">
-                <p:graphicImage name="resources/images/enclos1.jpg"/> 
- 
-                <h:outputText value="#{phrasee}" />
- 
-            </h:panelGrid>
-        </p:panel>
- 
-    </p:dataGrid>
-        <p:dataGrid var="enclos" value="#{parle.enclos}" columns="3" layout="grid" rows="6">
+        <p:dataGrid var="enclos" value="#{enclosBean.enclos}" columns="3" layout="grid" rows="6">
          <f:facet name="header">
             Les Enclos du Zoo
         </f:facet>

@@ -8,10 +8,12 @@ import javax.faces.context.FacesContext;
 public class BlaBlaWindow implements BlaBlaBeanInterface {
 
 	public void blaBlaBeanMessage(String summary, String detail) {
-		String html= "Le growl de PrimeFaces permet d'afficher des messages"
+		String html= 
+				"<div style='background-color:#ffe066'>"
+				+"Le growl de PrimeFaces permet d'afficher des messages"
 				+"<strong color=blue> au dessus </strong>"
 				+"de la page.<br />Avec un  <h1 style='color:blue;'> peu de html </h1> on peut"
-				+"<br />enrichir le texte";
+				+"<br />enrichir le texte</div>";
 	        FacesMessage message = 
 new FacesMessage(FacesMessage.SEVERITY_ERROR, "A propos...", html);
 	        FacesContext.getCurrentInstance().addMessage(null, message);

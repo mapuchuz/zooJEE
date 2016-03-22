@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.inject.Model;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 @Model
@@ -12,13 +14,16 @@ public class EnclosBean {
 	
 	@Inject
 	EnclosServiceInterface service;
-	
-	public void getAllEnclos() {
-		service.enclosServiceGetAll();
-	}
+
+	@Inject
+	BlaBlaBeanInterface blablaService;
 	
 	public void refresh() {
 		enclos= service.enclosServiceGetAll();
+	        
+		blablaService.blaBlaBeanMessage("Ajax sur une page", 
+				"Un bouton dans un panneau déclenche un calcul"
+				+"\npuis un affichage ajax dans un autre panneau.");
 	}
 
 	public List<Enclos> getEnclos() {

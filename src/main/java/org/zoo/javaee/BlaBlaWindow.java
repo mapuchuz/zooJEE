@@ -1,16 +1,20 @@
 package org.zoo.javaee;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.ejb.Stateless;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
-import org.primefaces.context.RequestContext;
-
-
-public class BlaBlaWindow {
+@Stateless
+public class BlaBlaWindow implements BlaBlaBeanInterface {
 
 	public void blaBlaBeanMessage(String summary, String detail) {
-		Map<String, Object> options = new HashMap<String, Object>();
-		options.put("resizable", false);
-		RequestContext.getCurrentInstance().openDialog("infosWindow", options, null);
+		String html= "Le growl de PrimeFaces permet d'afficher des messages"
+				+"<strong color=blue> au dessus </strong>"
+				+"de la page.<br />Avec un  <h1 style='color:blue;'> peu de html </h1> on peut"
+				+"<br />enrichir le texte";
+	        FacesMessage message = 
+new FacesMessage(FacesMessage.SEVERITY_ERROR, "A propos...", html);
+	        FacesContext.getCurrentInstance().addMessage(null, message);
+	        	
 	}
 }

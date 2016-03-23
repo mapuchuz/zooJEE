@@ -13,6 +13,11 @@ public class Animal {
 		this.nom= name;
 		this.espece= espece;
 	}
+	public Animal(String name, String espece, String photo) {
+		this.nom= name;
+		this.espece= espece;
+		this.photo= photo;
+	}
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
